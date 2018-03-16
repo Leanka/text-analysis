@@ -13,12 +13,15 @@ import static java.util.Arrays.asList;
 
 public class FileContent implements IterableText{
     private String fileContent;
+    private String filename;
 
-    public FileContent(String filePath) throws FileNotFoundException{
-        fileContent = getFileContent(filePath);
+    public FileContent(String filename) throws FileNotFoundException{
+        this.filename = filename;
+        this.fileContent = getFileContent();
     }
 
-    private String getFileContent(String filePath) throws FileNotFoundException{
+    private String getFileContent() throws FileNotFoundException{
+        String filePath = System.getProperty("user.dir") + "/src/main/resources/" + filename;
         BufferedReader reader = new BufferedReader(new FileReader(filePath));
         return reader
                 .lines()
@@ -34,4 +37,7 @@ public class FileContent implements IterableText{
         return new Worditerator(asList(fileContent.split("[ ]+")));
     }
 
+    public String getFilename() {
+        return filename;
+    }
 }
