@@ -3,7 +3,7 @@ package iterator;
 import java.util.Iterator;
 import java.util.List;
 
-public class Worditerator implements Iterator{
+public class Worditerator implements Iterator <String>{
     List <String> words;
     Integer index = 0;
 

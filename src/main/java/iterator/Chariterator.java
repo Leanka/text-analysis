@@ -5,7 +5,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.regex.Pattern;
 
-public class Chariterator implements Iterator{
+public class Chariterator implements Iterator <String>{
     List<String> letters;
     Integer index = 0;
 
