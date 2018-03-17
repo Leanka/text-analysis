@@ -15,6 +15,8 @@ public class Worditerator implements Iterator{
         boolean next = false;
         if(index < words.size()){
             next = true;
+        }else {
+            resetIterator();
         }
 
         return next;
@@ -30,5 +32,9 @@ public class Worditerator implements Iterator{
 
     public void remove(){
         words.remove(index);
+    }
+
+    public void resetIterator(){
+        this.index = 0;
     }
 }

@@ -23,6 +23,10 @@ public class Chariterator implements Iterator{
             ++index;
         }
 
+        if(index >= letters.size()){
+            resetIterator();
+        }
+
         return next;
     }
 
@@ -37,5 +41,9 @@ public class Chariterator implements Iterator{
 
     public void remove() {
         letters.remove(index);
+    }
+
+    public void resetIterator(){
+        this.index = 0;
     }
 }
