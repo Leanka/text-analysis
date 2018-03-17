@@ -2,7 +2,7 @@ package analysis;
 
 import java.util.*;
 
-public class StatisticalAnalysis {
+public abstract class StatisticalAnalysis {
     private Iterator <String> iterator;
 
     public StatisticalAnalysis(Iterator<String> iterator) {
@@ -65,6 +65,11 @@ public class StatisticalAnalysis {
             }
         }
         return matchingElements;
+    }
 
+    public Map<String, Integer> getOccurrenceStatistics(){
+        Set <String> dictionary = getDictionary();
+        String [] occurrenceStatistics = dictionary.toArray(new String[dictionary.size()]);
+        return countOf(occurrenceStatistics);
     }
 }
